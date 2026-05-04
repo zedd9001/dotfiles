@@ -270,3 +270,9 @@ bindsym $mod+r mode "resize"
 include /etc/sway/config.d/*
 
 exec firefox
+
+default_border pixel 1
+
+client.focused          #e8e8e8 #0d0d0d #c8c8c8 #e8e8e8 #e8e8e8
+client.unfocused        #0d0d0d #0d0d0d #666666 #0d0d0d #0d0d0d
+client.focused_inactive #0d0d0d #0d0d0d #666666 #0d0d0d #0d0d0d
