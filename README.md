@@ -1,1 +1,1 @@
-My dotfiles for my very simple sway rice
+My dotfiles for my sway rice 
