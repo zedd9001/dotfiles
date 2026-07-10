@@ -1,27 +1,74 @@
 * {
-    font-size: 15px;
-    font-family: monospace;
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
 }
 
-window#waybar {
-    background-color: #141414;
-    color: #e8e8e8;
+#waybar {
+  background: rgba(22, 28, 35, 0.92);
+  color: #C5C7D6;
+  font-family: "MesloLGS Nerd Font", "Noto Sans", sans-serif;
+  font-size: 13px;
+  border-top: 2px solid #292D35;
+}
+
+#workspaces {
+  padding: 0 4px;
 }
 
 #workspaces button {
-    color: #777777;
-    background-color: transparent;
-    padding: 0 8px;
+  padding: 0 8px;
+  margin: 4px 2px;
+  background: #292D35;
+  color: #9C9BAA;
+  border-radius: 0;
+  border: 1px solid transparent;
 }
 
-#workspaces button.focused {
-    background-color: #2a2a2a;
-    color: #e8e8e8;
-    border-radius: 4px;
+#workspaces button.active {
+  background: #79a8b0;
+  color: #FFFFFF;
+  border: 1px solid #9C9BAA;
 }
 
-#clock,
+#workspaces button.urgent {
+  background: #79a8b0;
+  color: #FFFFFF;
+}
+
 #window {
-    padding: 0 10px;
-    color: #c1c1c1;
+  padding: 0 12px;
+  margin: 4px 0;
+  color: #DAD4E1;
+  border-left: 1px solid #323748;
+}
+
+#custom-ethernet {
+  padding: 0 10px;
+  margin: 4px 0;
+  color: #aba6a6;
+}
+
+#custom-localip {
+  padding: 0 10px;
+  margin: 4px 0 4px 12px;
+  color: #9C9BAA;
+  border-left: 1px solid #323748;
+}
+
+#clock-date {
+  padding: 0 10px;
+  margin: 4px 0 4px 12px;
+  color: #DAD4E1;
+  border-left: 1px solid #323748;
+}
+
+#clock-time {
+  padding: 0 10px;
+  margin: 4px 0 4px 12px;
+  color: #FFFFFF;
+  font-weight: bold;
+  border-left: 1px solid #323748;
 }
