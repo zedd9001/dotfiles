@@ -1,4 +1,0 @@
-style=~/.config/wofi/style.css
-allow_images=false
-insensitive=true
-show=drun,run
