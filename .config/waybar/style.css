@@ -27,14 +27,15 @@
   border: 1px solid transparent;
 }
 
-#workspaces button.active {
-  background: #79a8b0;
+#workspaces button.active,
+#workspaces button.focused {
+  background: #596478;
   color: #FFFFFF;
   border: 1px solid #9C9BAA;
 }
 
 #workspaces button.urgent {
-  background: #79a8b0;
+  background: #596478;
   color: #FFFFFF;
 }
 
@@ -42,7 +43,6 @@
   padding: 0 12px;
   margin: 4px 0;
   color: #DAD4E1;
-  border-left: 1px solid #323748;
 }
 
 #custom-ethernet {
@@ -53,22 +53,19 @@
 
 #custom-localip {
   padding: 0 10px;
-  margin: 4px 0 4px 12px;
+  margin: 4px 0;
   color: #9C9BAA;
-  border-left: 1px solid #323748;
 }
 
 #clock-date {
   padding: 0 10px;
-  margin: 4px 0 4px 12px;
+  margin: 4px 0;
   color: #DAD4E1;
-  border-left: 1px solid #323748;
 }
 
 #clock-time {
   padding: 0 10px;
-  margin: 4px 0 4px 12px;
+  margin: 4px 0;
   color: #FFFFFF;
   font-weight: bold;
-  border-left: 1px solid #323748;
 }
