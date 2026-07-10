@@ -1,0 +1,46 @@
+{
+  "layer": "bottom",
+  "position": "bottom",
+  "height": 32,
+  "spacing": 4,
+  "modules-left": ["sway/workspaces", "sway/window"],
+  "modules-center": [],
+  "modules-right": ["custom/ethernet", "custom/localip", "clock#date", "clock#time"],
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "format": "{name}",
+    "persistent_workspaces": {
+      "1: Terminals": [],
+      "2: General": [],
+      "3: Browser": []
+    }
+  },
+  "sway/window": {
+    "format": "{}",
+    "max-length": 50,
+    "tooltip": false
+  },
+  "custom/ethernet": {
+    "exec": "if grep -lq up /sys/class/net/en*/operstate 2>/dev/null; then echo '󰈁'; else echo '󰈂'; fi",
+    "interval": 5,
+    "return-type": "json",
+    "format": "{}",
+    "tooltip": true
+  },
+  "custom/localip": {
+    "exec": "ip -4 addr show scope global up | grep inet | awk '{print $2}' | cut -d/ -f1 | head -1 | sed 's/^/󰯄 / '",
+    "interval": 10,
+    "tooltip": false
+  },
+  "clock#date": {
+    "format": "󰃭 {:%a %d %b} ",
+    "tooltip": false,
+    "interval": 60
+  },
+  "clock#time": {
+    "format": "󰥔 {:%H:%M} ",
+    "tooltip": false,
+    "interval": 30
+  }
+}
