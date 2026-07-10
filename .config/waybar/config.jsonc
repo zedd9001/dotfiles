@@ -7,7 +7,7 @@
   "modules-center": [],
   "modules-right": ["custom/ethernet", "custom/localip", "clock#date", "clock#time"],
   "sway/workspaces": {
-    "disable-scroll": true,
+    "disable-scroll": false,
     "all-outputs": true,
     "format": "{name}",
     "persistent_workspaces": {
