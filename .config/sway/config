@@ -17,15 +17,20 @@ set $right l
 set $term alacritty
 # Your preferred application launcher
 #set $menu wofi --show drun,run --style /home/zaki/.config/wofi/style.css
-set $menu ~/.config/wofi/launch.sh
-### Output configuration
-#
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/zaki/Pictures/*.png fill
-#output * bg #000000 solid_color
+set $menu rofi -show run
 
-exec_always waybar
-#output * bg /home/zaki/Pictures/dark-nature-ecoszxkcqcayo73x.jpg fill
+### Output configuration
+output * bg /home/zaki/Pictures/wallpaper.jpg fill
+### Window borders and more
+default_border pixel 2
+default_floating_border pixel 2
+for_window [all] border pixel 2
+client.focused #79a8b0 #1F252C #E4DFE1 #6f657c #79a8b0
+client.focused_inactive #323748 #161C23 #9C9BAA #292D35 #323748
+client.unfocused #292D35 #161C23 #68728E #1F252C #292D35
+client.urgent #5B8F55 #1F252C #E4DFE1 #5B8F55 #5B8F55
+client.placeholder #000000 #000000 #E4DFE1 #000000 #000000
+client.background #161C23
 
 #
 # Example configuration:
@@ -69,18 +74,18 @@ exec_always waybar
 #
 # Basics:
 #
-#input "2:7:SynPS/2_Synaptics_TouchPad" {
+input "2:7:SynPS/2_Synaptics_TouchPad" {
     	# Speed ranges from -1.0 to 1.0.
 	# Try 0.5 for a significant boost; 1.0 is maximum.
- #   	pointer_accel 0.5
-#	tap enabled
-#	dwt disabled
+    	pointer_accel 0.5
+	tap enabled
+	dwt disabled
         # 'adaptive' is default; 'flat' provides consistent speed regardless of movement velocity.
-#	accel_profile adaptive
+	accel_profile adaptive
 
 	# Optional: Increase scroll speed (1.0 is default)
-#	scroll_factor 1.5
-#}
+	scroll_factor 1.5
+}
 
 # Start a terminal
 bindsym $mod+Return exec $term
@@ -89,7 +94,7 @@ bindsym $mod+Return exec $term
 bindsym $mod+b exec firefox
 
 # exec swaylock
-bindsym Delete exec swaylock
+bindsym $mod+Delete exec swaylock
 
 # take screenshots
 bindsym End exec grim -g "$(slurp)" - | wl-copy
@@ -101,7 +106,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec $menu
 
 # Start file manager
-bindsym $mod+y thunar
+bindsym $mod+x exec dolphin
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
 # Despite the name, also works for non-floating windows.
@@ -240,8 +245,10 @@ bindsym $mod+r mode "resize"
 #
     # Special keys to adjust volume via PulseAudio
     bindsym --locked XF86AudioMute exec pactl set-sink-mute \@DEFAULT_SINK@ toggle
-    bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
-    bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume \@DEFAULT_SINK@ +5%
+    #bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
+    #bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume \@DEFAULT_SINK@ +5%
+    bindsym --locked Scroll_Lock exec pactl set-sink-volume \@DEFAULT_SINK@ +5%
+    bindsym --locked Pause exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
     bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
     # Special keys to adjust brightness via brightnessctl
     bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
@@ -249,30 +256,9 @@ bindsym $mod+r mode "resize"
     # Special key to take a screenshot with grim
     #bindsym End exec grim
 
-#
-# Status Bar:
-#
-# Read `man 5 sway-bar` for more information about this section.
-#bar {
-#    position bottom
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    #status_command while date +'%Y-%m-%d %X'; do sleep 1; done
-#    status_command i3status
-    #colors {
-    #    statusline #ffffff
-    #    background #323232
-    #    inactive_workspace #32323200 #32323200 #5c5c5c
-    #}
-#}
-
 include /etc/sway/config.d/*
 
+exec_always waybar
+exec_always swaync
+exec_always autotiling
 exec firefox
-
-default_border pixel 1
-
-client.focused          #e8e8e8 #0d0d0d #c8c8c8 #e8e8e8 #e8e8e8
-client.unfocused        #0d0d0d #0d0d0d #666666 #0d0d0d #0d0d0d
-client.focused_inactive #0d0d0d #0d0d0d #666666 #0d0d0d #0d0d0d
