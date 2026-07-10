@@ -1,0 +1,14 @@
+configuration {
+  modi: "drun,run,window";
+  display-drun: "   Run";
+  display-run: "   Cmd";
+  display-window: "   Win";
+  show-icons: true;
+  drun-display-format: "{name}";
+  font: "MesloLGS Nerd Font 12";
+  terminal: "alacritty";
+  kb-primary-paste: "Control+V,Shift+Insert";
+  kb-secondary-paste: "Control+v,Control+Shift+v";
+}
+
+@theme "/home/zaki/.config/rofi/theme.rasi"

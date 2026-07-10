@@ -1,0 +1,90 @@
+* {
+  bg-col:    #161C23;
+  bg-alt:    #1F252C;
+  surface:   #292D35;
+  surface-alt: #323748;
+  purple:    #447078;
+  gray:      #9C9BAA;
+  fg:        #C5C7D6;
+  fg-bright: #DAD4E1;
+  green:     #5B8F55;
+  white:     #FFFFFF;
+  urgent:    #C73E3E;
+
+  font: "MesloLGS Nerd Font 12";
+
+  background-color: transparent;
+  text-color: var(fg);
+}
+
+window {
+  fullscreen: false;
+  width: 50%;
+  height: 360px;
+  border: 2px;
+  border-color: var(surface-alt);
+  background-color: var(bg-col);
+  padding: 4px;
+  margin: 0;
+  children: [mainbox];
+}
+
+mainbox {
+  children: [inputbar, listview];
+  spacing: 0;
+  padding: 0;
+}
+
+inputbar {
+  background-color: var(bg-alt);
+  padding: 8px 12px;
+  spacing: 8px;
+  children: [entry, case-indicator];
+  border: 2px dash 0px 0px;
+  border-color: var(purple);
+}
+
+entry {
+  font: "MesloLGS Nerd Font 12";
+  text-color: var(white);
+  cursor: text;
+  placeholder-color: var(gray);
+  placeholder: "  Launch...";
+}
+
+case-indicator {
+  font: "MesloLGS Nerd Font 10";
+  text-color: var(gray);
+}
+
+listview {
+  spacing: 0;
+  padding: 0;
+  scrollbar: false;
+  layout: vertical;
+  cycle: true;
+  dynamic: true;
+}
+
+element {
+  padding: 8px 12px;
+  background-color: transparent;
+  text-color: var(fg);
+  cursor: pointer;
+}
+
+element selected {
+  background-color: var(purple);
+  text-color: var(white);
+  border: 0px 0px 0px 3px;
+  border-color: var(white);
+}
+
+element urgent {
+  background-color: var(urgent);
+  text-color: var(white);
+}
+
+element-icon {
+  size: 24px;
+}
