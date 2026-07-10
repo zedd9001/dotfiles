@@ -22,14 +22,14 @@
     "tooltip": false
   },
   "custom/ethernet": {
-    "exec": "if grep -lq up /sys/class/net/en*/operstate 2>/dev/null; then echo '󰈁'; else echo '󰈂'; fi",
+    "exec": "if grep -lq up /sys/class/net/en*/operstate 2>/dev/null; then echo '󰈁 Ethernet: Connected'; else echo '󰈂 Ethernet: Disconnected'; fi",
     "interval": 5,
-    "return-type": "json",
+    "return-type": "text",
     "format": "{}",
-    "tooltip": true
+    "tooltip": false
   },
   "custom/localip": {
-    "exec": "ip -4 addr show scope global up | grep inet | awk '{print $2}' | cut -d/ -f1 | head -1 | sed 's/^/󰯄 / '",
+    "exec": "ip -4 addr show scope global up | grep inet | awk '{print $2}' | cut -d/ -f1 | head -1 | sed 's/^/󰯄 /'",
     "interval": 10,
     "tooltip": false
   },
@@ -39,7 +39,7 @@
     "interval": 60
   },
   "clock#time": {
-    "format": "󰥔 {:%H:%M} ",
+    "format": "󰥔 {:%I:%M %p} ",
     "tooltip": false,
     "interval": 30
   }
