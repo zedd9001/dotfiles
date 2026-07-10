@@ -13,20 +13,20 @@ cyan    = "#56b6c2"
 white   = "#e8e8e8"
 
 [colors.bright]
-black   = "#2a2a2a"
+black   = "#545454"
 red     = "#e06c75"
 green   = "#98c379"
 yellow  = "#e5c07b"
-blue    = "#61afef"
+blue    = "#2168a3"
 magenta = "#c678dd"
 cyan    = "#56b6c2"
 white   = "#ffffff"
 
 [font]
-size = 13.0
+size = 16.0
 
 [font.normal]
-family = "monospace"
+family = "FantasqueSansM Nerd Font"
 
 [window]
 opacity = 0.95
