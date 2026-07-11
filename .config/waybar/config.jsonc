@@ -8,13 +8,7 @@
   "modules-right": ["custom/ethernet", "custom/localip", "clock#date", "clock#time"],
   "sway/workspaces": {
     "disable-scroll": false,
-    "all-outputs": true,
-    "format": "{name}",
-    "persistent_workspaces": {
-      "1: Terminals": [],
-      "2: General": [],
-      "3: Browser": []
-    }
+    "all-outputs": true
   },
   "sway/window": {
     "format": "{}",
