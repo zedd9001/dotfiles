@@ -11,7 +11,7 @@
   white:     #FFFFFF;
   urgent:    #C73E3E;
 
-  font: "MesloLGS Nerd Font 12";
+  font: "JetBrainsMono Nerd Font Mono 12";
 
   background-color: transparent;
   text-color: var(fg);
@@ -45,7 +45,7 @@ inputbar {
 }
 
 entry {
-  font: "MesloLGS Nerd Font 12";
+  font: "JetBrainsMono Nerd Font Mono 12";
   text-color: var(white);
   cursor: text;
   placeholder-color: var(gray);
@@ -53,7 +53,7 @@ entry {
 }
 
 case-indicator {
-  font: "MesloLGS Nerd Font 10";
+  font: "JetBrainsMono Nerd Font Mono 10";
   text-color: var(gray);
 }
 

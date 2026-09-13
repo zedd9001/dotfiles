@@ -23,10 +23,10 @@ cyan    = "#56b6c2"
 white   = "#ffffff"
 
 [font]
-size = 16.0
+size = 14.5
 
 [font.normal]
-family = "FantasqueSansM Nerd Font"
+family = "JetBrainsMono Nerd Font Mono"
 
 [window]
 opacity = 0.75

@@ -19,6 +19,9 @@ set $term alacritty
 #set $menu wofi --show drun,run --style /home/zaki/.config/wofi/style.css
 set $menu rofi -show run
 
+# Font
+font pango:JetBrainsMono Nerd Font Mono 10
+
 ### Output configuration
 output * bg /home/zaki/Pictures/wallpaper.jpg fill
 ### Window border (off-white focused, title bars removed)
@@ -77,7 +80,8 @@ client.background #161C23
 input "2:7:SynPS/2_Synaptics_TouchPad" {
     	# Speed ranges from -1.0 to 1.0.
 	# Try 0.5 for a significant boost; 1.0 is maximum.
-    	pointer_accel 0.5
+    	accel_profile flat
+	pointer_accel 0
 	tap enabled
 	dwt disabled
         # 'adaptive' is default; 'flat' provides consistent speed regardless of movement velocity.
@@ -98,6 +102,9 @@ bindsym $mod+Delete exec swaylock
 
 # take screenshots
 bindsym End exec grim -g "$(slurp)" - | wl-copy
+
+# Save last 15s clip (gpu-screen-recorder replay buffer)
+bindsym $mod+Shift+r exec killall -USR1 gpu-screen-recorder
 
 # Kill focused window
 bindsym $mod+Shift+q kill
@@ -255,8 +262,8 @@ bindsym $mod+r mode "resize"
     #bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume \@DEFAULT_SINK@ +5%
     bindsym --locked Scroll_Lock exec pactl set-sink-volume \@DEFAULT_SINK@ +5%
     bindsym --locked Pause exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
-    bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
-    # Special keys to adjust brightness via brightnessctl
+    bindsym Print exec pactl set-sink-mute @DEFAULT_SINK@ toggle    
+# Special keys to adjust brightness via brightnessctl
     bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
     # Special key to take a screenshot with grim
@@ -264,7 +271,9 @@ bindsym $mod+r mode "resize"
 
 include /etc/sway/config.d/*
 
-exec_always waybar
+exec waybar
 exec_always swaync
 exec_always autotiling
 exec firefox
+
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
