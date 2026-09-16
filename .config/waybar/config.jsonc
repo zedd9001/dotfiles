@@ -10,16 +10,12 @@
     "disable-scroll": false,
     "all-outputs": true,
     "sort-by": "number",
-    "format": "{name}",
-    "on-scroll-up": "hyprctl dispatch cyclenext prev",
-    "on-scroll-down": "hyprctl dispatch cyclenext next"
+    "format": "{name}"
   },
   "hyprland/window": {
     "format": "{}",
     "max-length": 50,
-    "tooltip": false,
-    "on-scroll-up": "hyprctl dispatch cyclenext prev",
-    "on-scroll-down": "hyprctl dispatch cyclenext next"
+    "tooltip": false
   },
   "battery": {
     "bat": "BAT0",
