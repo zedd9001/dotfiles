@@ -23,7 +23,7 @@ set $menu rofi -show run
 font pango:JetBrainsMono Nerd Font Mono 10
 
 ### Output configuration
-output * bg /home/zaki/Pictures/wallpaper.jpg fill
+output * bg /home/guh/Pictures/wallpaper.jpg fill
 ### Window border (off-white focused, title bars removed)
 default_border pixel 2
 default_floating_border pixel 2

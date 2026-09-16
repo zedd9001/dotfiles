@@ -1,19 +1,41 @@
 {
   "layer": "bottom",
   "position": "bottom",
-  "height": 32,
+  "height": 34,
   "spacing": 4,
-  "modules-left": ["sway/workspaces", "sway/window"],
+  "modules-left": ["hyprland/workspaces", "hyprland/window"],
   "modules-center": [],
-  "modules-right": ["custom/ethernet", "custom/localip", "clock#date", "clock#time"],
-  "sway/workspaces": {
+  "modules-right": ["battery", "custom/ethernet", "custom/localip", "clock#date", "clock#time"],
+  "hyprland/workspaces": {
     "disable-scroll": false,
-    "all-outputs": true
+    "all-outputs": true,
+    "sort-by": "number",
+    "format": "{name}",
+    "persistent-workspaces": {
+      "*": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    }
   },
-  "sway/window": {
+  "hyprland/window": {
     "format": "{}",
     "max-length": 50,
     "tooltip": false
+  },
+  "battery": {
+    "bat": "BAT0",
+    "adapter": "ADP0",
+    "interval": 30,
+    "states": {
+      "warning": 20,
+      "critical": 10
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": "{icon} {capacity}% ({time} to full)",
+    "format-plugged": "{icon} {capacity}% (plugged in)",
+    "format-full": "{icon} {capacity}% (full)",
+    "format-discharging": "{icon} {capacity}% ({time} left)",
+    "format-time": "{H}h {M}m",
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "tooltip": true
   },
   "custom/ethernet": {
     "exec": "if grep -lq up /sys/class/net/en*/operstate 2>/dev/null; then echo '󰈁 Ethernet: Connected'; else echo '󰈂 Ethernet: Disconnected'; fi",

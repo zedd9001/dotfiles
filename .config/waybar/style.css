@@ -9,7 +9,7 @@
 #waybar {
   background: rgba(22, 28, 35, 0.92);
   color: #C5C7D6;
-  font-family: "FantasqueSansM Nerd Font Mono";
+  font-family: "JetBrainsMono Nerd Font Mono";
   font-size: 17px;
   border-top: 2px solid #292D35;
 }
@@ -43,6 +43,26 @@
   padding: 0 12px;
   margin: 4px 0;
   color: #DAD4E1;
+}
+
+#battery {
+  padding: 0 10px;
+  margin: 4px 0;
+  color: #9C9BAA;
+}
+
+#battery.charging,
+#battery.plugged,
+#battery.full {
+  color: #98C379;
+}
+
+#battery.warning {
+  color: #E5C07B;
+}
+
+#battery.critical {
+  color: #C73E3E;
 }
 
 #custom-ethernet {

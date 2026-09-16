@@ -11,4 +11,4 @@ configuration {
   kb-secondary-paste: "Control+v,Control+Shift+v";
 }
 
-@theme "/home/zaki/.config/rofi/theme.rasi"
+@theme "/home/guh/.config/rofi/theme.rasi"
