@@ -1,6 +1,7 @@
 # Dotfiles
 
-Hyprland 0.56.x desktop configuration.
+Dotfiles for my ~~Sway~~ hyprland config 
+Hyprland 0.56.x desktop configuration 
 
 ## Contents
 
@@ -11,7 +12,7 @@ Hyprland 0.56.x desktop configuration.
 | `.config/rofi` | App launcher / theme |
 | `.config/alacritty` | Terminal |
 | `.config/fontconfig` | Font configuration |
-| `wallpaper.jpg` | Wallpaper (also at `~/Pictures/wallpaper.jpg`) |
+| `wallpaper.jpg` | Wallpaper (move to `~/Pictures/wallpaper.jpg`) |
 
 ## Sync
 
