@@ -1,6 +1,6 @@
 # Dotfiles
 
-Sway rice, converted to **Hyprland** (0.56.x).
+Hyprland 0.56.x desktop configuration.
 
 ## Contents
 
@@ -11,7 +11,6 @@ Sway rice, converted to **Hyprland** (0.56.x).
 | `.config/rofi` | App launcher / theme |
 | `.config/alacritty` | Terminal |
 | `.config/fontconfig` | Font configuration |
-| `.config/sway` | Legacy sway config (kept for reference) |
 | `wallpaper.jpg` | Wallpaper (also at `~/Pictures/wallpaper.jpg`) |
 
 ## Sync
