@@ -1,0 +1,150 @@
+/* swaync — matches waybar style.css palette:
+   bg #161C23, surface #292D35, active #596478, text #C5C7D6
+   flat (radius 0), JetBrainsMono NF 15px */
+
+@define-color bg       rgba(22, 28, 35, 0.92);
+@define-color surface  #292D35;
+@define-color active   #596478;
+@define-color fg       #C5C7D6;
+@define-color fg-soft  #9C9BAA;
+@define-color fg-strong #FFFFFF;
+@define-color urgent   #C73E3E;
+@define-color success  #98C379;
+@define-color warn     #E5C07B;
+
+* {
+  all: unset;
+  font-family: "JetBrainsMono Nerd Font Mono";
+  font-size: 15px;
+  color: @fg;
+}
+
+/* ---------- toasts ---------- */
+
+.notification-row {
+  outline: none;
+  margin: 6px 8px;
+}
+
+.notification-row:focus,
+.notification-row:hover {
+  background: transparent;
+}
+
+.notification {
+  background-color: @bg;
+  border: 1px solid @surface;
+  border-radius: 0; /* flat, matches Hyprland rounding=0 */
+  margin: 4px;
+  padding: 0;
+}
+
+.notification.low { border-color: @surface; }
+.notification.normal { border-color: @surface; }
+.notification.urgent { border-color: @urgent; }
+.notification.critical { border-color: @urgent; }
+
+.notification-content {
+  background: transparent;
+  padding: 8px 10px;
+}
+
+.notification-content .image { margin-right: 8px; }
+
+.title {
+  color: @fg-strong;
+  font-weight: bold;
+}
+
+.summary { color: @fg; }
+
+.body,
+.app-name {
+  color: @fg-soft;
+  font-size: 13px;
+}
+
+.time {
+  color: @fg-soft;
+  font-size: 12px;
+}
+
+/* action buttons on toasts */
+.notification-default-action,
+.notification-action {
+  background-color: @surface;
+  color: @fg;
+  border: 1px solid transparent;
+  border-radius: 0;
+}
+
+.notification-default-action:hover,
+.notification-action:hover {
+  background-color: @active;
+  color: @fg-strong;
+}
+
+.close-button {
+  background-color: @surface;
+  color: @fg-soft;
+  border-radius: 0;
+  margin: 4px;
+}
+
+.close-button:hover { color: @urgent; }
+
+/* ---------- control center ---------- */
+
+.control-center {
+  background-color: @bg;
+  border: 1px solid @surface;
+  border-radius: 0;
+  padding: 0;
+}
+
+.control-center .notification {
+  background-color: rgba(22, 28, 35, 0.60);
+}
+
+.control-center-list { background: transparent; }
+
+/* header widgets */
+.widget-title {
+  color: @fg-strong;
+  background-color: @surface;
+  padding: 10px;
+  border-bottom: 1px solid @surface;
+}
+
+.widget-title > button {
+  background-color: @surface;
+  color: @fg-soft;
+  border-radius: 0;
+}
+
+.widget-title > button:hover { color: @urgent; }
+
+.widget-dnd {
+  background-color: @surface;
+  padding: 8px 10px;
+}
+
+/* dnd switch */
+switch {
+  background-color: @active;
+  border-radius: 0;
+}
+
+switch checked { background-color: @success; }
+
+switch slider {
+  background-color: @fg-strong;
+  border-radius: 0;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+/* empty-state text */
+.control-center placeholder {
+  color: @fg-soft;
+}

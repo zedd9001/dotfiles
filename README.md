@@ -10,6 +10,7 @@ Hyprland 0.56.x desktop configuration
 | `.config/hypr` | Hyprland compositor: `hyprland.conf`, `hypridle`, `hyprlock`, `hyprpaper` |
 | `.config/waybar` | Waybar bar (Hyprland modules + battery) |
 | `.config/rofi` | App launcher / theme |
+| `.config/swaync` | Notification daemon (themed to match waybar) |
 | `.config/alacritty` | Terminal |
 | `.config/fontconfig` | Font configuration |
 | `wallpaper.jpg` | Wallpaper (move to `~/Pictures/wallpaper.jpg`) |
