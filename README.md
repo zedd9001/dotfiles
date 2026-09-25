@@ -1,6 +1,6 @@
 # Dotfiles
 
-Dotfiles for my ~~Sway~~ hyprland config 
+Dotfiles for my ~~Sway~~ hyprland config  
 Hyprland 0.56.x desktop configuration 
 
 ## Contents
